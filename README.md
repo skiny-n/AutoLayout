@@ -5,7 +5,7 @@
 **AutoLayout** is a very light-weight layout framework wrapping Apple's Auto Layout API with super easy chainable syntax to speed up everyday autolayouting tasks.  
 Since this framework is just a wrapper, there are no dependencies whatsoever 😊  
 
-Anything Auto Layout can do - AutoLayout can do too. All classes, extensions and functions are documented for autocomplete quick overview. I've been using this library in my personal projects and it saved me tons of time and constraints headache 😩 (looking at you **_Unable to simultaneously satisfy constraints_...**)  
+Anything Auto Layout can do - AutoLayout can do too - **but with waaaay shorter syntax**. All classes, extensions and functions are documented for autocomplete quick overview. I've been using this library in my personal projects and it saved me tons of time and constraints headache 😩 (looking at you **_Unable to simultaneously satisfy constraints_...**)  
 
 So perhaps it will save you some time as well. **Enjoy!** ❤️  
 
@@ -40,20 +40,20 @@ let view5 = BaseView.colored(to: .color5)
 // Layout the views
 let spacing: CGFloat = 8
 view1.autoLayout(in: container).top().left().right()
-.height(to: container, multiplier: 0.2).activate()
+                               .height(to: container, multiplier: 0.2).activate()
 
 view2.autoLayout(in: container).below(spacing, to: view1).left()
-.widthToParent(multiplier: 1.0/3, constant: -spacing).activate()
+                               .widthToParent(multiplier: 1.0/3, constant: -spacing).activate()
 
 view3.autoLayout(in: container).top(to: view2).right().width(to: view2)
-.height(to: view2).activate()
+                               .height(to: view2).activate()
 
 view4.autoLayout(in: container).centerVertically(to: view2)
-.horizontallyBetween(view2, and: view3, margin: spacing)
-.height(to: view2, multiplier: 0.75).activate()
+                               .horizontallyBetween(view2, and: view3, margin: spacing)
+                               .height(to: view2, multiplier: 0.75).activate()
 
 view5.autoLayout(in: container).below(spacing, to: view3).left().right().bottom(48)
-.height(to: view1).activate()
+                               .height(to: view1).activate()
 
 // And add buttons
 let buttonsContainer = UIView()
@@ -93,7 +93,7 @@ myView.autoLayout.width(to: otherView, multiplier: 1, constant: -10, priority: .
 Instances of this class serve only to create and keep references to created constraints so it's totally OK to discard them after calling `activate()`, which activates all created constraints:
 ```swift
 myView.autoLayout(in: otherView).centerHorizontally().centerVertically()
-.width(300).height(relation: <= 450).activate()
+                                .width(300).height(relation: <= 450).activate()
 ```
 
 ### Changing layout
@@ -114,7 +114,7 @@ someViewLayout.heightConnections.first?.constant = 500
 // OR you can keep around just the height connection
 let someView = UIView()
 let heightConnection = someView.autoLayout(in: self.view).top().left().right().height(150)
-.activate().findAll(.height).first
+                                                         .activate().findAll(.height).first
 
 // and then
 heightConnection?.constant = 500
@@ -169,20 +169,20 @@ There's lots of conveniences. You can layout with constants, multipliers, with p
 
 ```swift
 // Top, Left, Right, Bottom, Leading, Trailing
-myView.autoLayout.top().left().right().bottom().activate()
-myView.autoLayout.top().leading().trailing().bottom().activate()
+myView.autoLayout.top().left().right().bottom()
+myView.autoLayout.top().leading().trailing().bottom()
 
-myView.autoLayout.top(to: otherView).leading(to: otherView).trailing(to: otherView).activate()
-myView.autoLayout.top(20).left(150).right(150).height(relation: <=400).activate()
+myView.autoLayout.top(to: otherView).leading(to: otherView).trailing(to: otherView)
+myView.autoLayout.top(20).left(150).right(150).height(relation: <=400)
 
 // Width, Height, Size and Aspect
-myView.autoLayout.size(80).activate()
-myView.autoLayout.width(80).height(80).activate()
-myView.autoLayout.width(80).aspect().activate()
-myView.autoLayout.height(relation: >=80).activate()
-myView.autoLayout.height(relation: .greaterThanOrEqual(to: otherView.heightAnchor, multiplier: 1, constant: -50, priority: .required)).activate()
-myView.autoLayout.width(to: otherView).aspect().activate()
-myView.autoLayout.width(to: otherView.heightAnchor).aspect().activate()
+myView.autoLayout.size(80)
+myView.autoLayout.width(80).height(80)
+myView.autoLayout.width(80).aspect()
+myView.autoLayout.height(relation: >=80)
+myView.autoLayout.height(relation: .greaterThanOrEqual(to: otherView.heightAnchor, multiplier: 1, constant: -50, priority: .required))
+myView.autoLayout.width(to: otherView).aspect()
+myView.autoLayout.width(to: otherView.heightAnchor).aspect()
 
 // Center vertically, center horizontally
 myView.autoLayout.centerVertically() // in parent
@@ -226,8 +226,8 @@ AutoLayout<UIView>.equalWidths([firstView, secondView]).activate()
 ```swift
 // Distribute views equaly in horizontal/vertical direciton (with optional spacing and margin)
 container.autoLayout.distributeHorizontally([firstView, secondView, thirdView], 
-spacing: 8, margin: .init(top: 20, left: 16, 
-bottom: 20, right: 16)).activate()
+                                            spacing: 8, 
+                                            margin: .init(top: 20, left: 16, bottom: 20, right: 16))
 ```
 
 
