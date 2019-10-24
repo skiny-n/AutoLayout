@@ -18,5 +18,6 @@ let package = Package(
             name: "AutoLayout",
             path: "./AutoLayout/"
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v4, .v4_2, .v5]
 )
