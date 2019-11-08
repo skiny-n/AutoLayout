@@ -266,6 +266,7 @@ public extension AutoLayout where Source: UIView {
     func destroy() {
         deactivate()
         source?.removeConstraints(connections.map({ $0.constraint }))
+        connections.removeAll()
     }
     
 }
