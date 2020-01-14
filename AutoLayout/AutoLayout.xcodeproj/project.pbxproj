@@ -14,6 +14,7 @@
 		2A98E2ACD6F143D8AD40FF27 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B8BC89C479711E827E32C0 /* Operators.swift */; };
 		45AA079306F19704179F1590 /* NSLayoutConstraint+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BE106FE630799F6D8301A2 /* NSLayoutConstraint+AutoLayout.swift */; };
 		5C85AD93EF55CFECF00A5CCC /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2BABF788494BBD6ACA559 /* UIView+AutoLayout.swift */; };
+		74585F6C23CDBD6F0011DC9D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74585F6B23CDBD6F0011DC9D /* Typealiases.swift */; };
 		91CA1EF4BD54B61C3121CA6D /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C638F1104E606CECBD589 /* AutoLayout.swift */; };
 		A1A9E59C133748A8CBC11458 /* Array+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED0E6155F25EE46FF9ED2D /* Array+AutoLayout.swift */; };
 		A33DA356FDA42EB149AFE666 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E71D0F33A461B4B1144398B /* Enums.swift */; };
@@ -44,6 +45,7 @@
 		55ED0E6155F25EE46FF9ED2D /* Array+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+AutoLayout.swift"; sourceTree = "<group>"; };
 		625EBDEF02BF3946A735F023 /* UILayoutGuide+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+AutoLayout.swift"; sourceTree = "<group>"; };
 		74585F5923CDBBF60011DC9D /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		74585F6B23CDBD6F0011DC9D /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		74E8B42A234F66ED00661949 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9D7784E6B5C04AC87C094DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA49A79888D3E9706F85C44C /* AutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				2385B92FEEE8519FEB390C8A /* Protocols.swift */,
 				625EBDEF02BF3946A735F023 /* UILayoutGuide+AutoLayout.swift */,
 				03C2BABF788494BBD6ACA559 /* UIView+AutoLayout.swift */,
+				74585F6B23CDBD6F0011DC9D /* Typealiases.swift */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				A1A9E59C133748A8CBC11458 /* Array+AutoLayout.swift in Sources */,
 				0B4674CC334449A856B60E04 /* AutoLayour+Distribution.swift in Sources */,
+				74585F6C23CDBD6F0011DC9D /* Typealiases.swift in Sources */,
 				280C74040F0E2D27179A05E6 /* AutoLayout+BaseLine.swift in Sources */,
 				0724D002AABC4D5C98065B7F /* AutoLayout+Connections.swift in Sources */,
 				E710A9DEF70ADB2558712342 /* AutoLayout+Parent.swift in Sources */,
