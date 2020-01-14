@@ -42,6 +42,40 @@ public extension AutoLayout {
     
 }
 
+public extension AutoLayout {
+    
+    /// Returns the first leading connection. Convenience, same as using `findAll(.leading).first`.
+    var firstLeadingConnection: Connection? { return findAll(.leading).first }
+    
+    /// Returns the first trailing connection. Convenience, same as using `findAll(.trailing).first`.
+    var firstTrailingConnection: Connection? { return findAll(.trailing).first }
+    
+    /// Returns the first left connection. Convenience, same as using `findAll(.left).first`.
+    var firstLeftConnection: Connection? { return findAll(.left).first }
+    
+    /// Returns the first right connection. Convenience, same as using `findAll(.right).first`.
+    var firstRightConnection: Connection? { return findAll(.right).first }
+    
+    /// Returns the first top connection. Convenience, same as using `findAll(.top).first`.
+    var firstTopConnection: Connection? { return findAll(.top).first }
+    
+    /// Returns the first bottom connection. Convenience, same as using `findAll(.bottom).first`.
+    var firstBottomConnection: Connection? { return findAll(.bottom).first }
+    
+    /// Returns the first width connection. Convenience, same as using `findAll(.width).first`.
+    var firstWidthConnection: Connection? { return findAll(.width).first }
+    
+    /// Returns the first height connection. Convenience, same as using `findAll(.height).first`.
+    var firstHeightConnection: Connection? { return findAll(.height).first }
+    
+    /// Returns the first centerX connection. Convenience, same as using `findAll(.centerX).first`.
+    var firstCenterXConnection: Connection? { return findAll(.centerX).first }
+    
+    /// Returns the first centerY connection. Convenience, same as using `findAll(.centerY).first`.
+    var firstCenterYConnection: Connection? { return findAll(.centerY).first }
+    
+}
+
 public extension AutoLayout where Source: UIView {
     
     /// Returns all firstBaseline connections. Convenience, same as using `findAll(.firstBaseline)`.
