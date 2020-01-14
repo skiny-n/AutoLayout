@@ -239,6 +239,16 @@ In debug mode, when you forget to call `activate()` or not-layouted AutoLayout i
 
 ## Installation
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but Alamofire does support its use on supported platforms.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/skiny-n/autolayout", .branch("master"))
+]
+```
+
 ### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
@@ -271,7 +281,6 @@ AutoLayout is released under the **MIT** license. See LICENSE for details.
 
 ## TODOs: 
 
-[ ] Swift PM  
 [ ] MacOS  
 [ ] tvOS  
 [ ] More examples  
