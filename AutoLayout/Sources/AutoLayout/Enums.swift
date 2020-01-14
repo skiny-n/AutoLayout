@@ -34,6 +34,24 @@ public enum LayoutConnectionSimpleRelation {
     case lessThanOrEqual(to: CGFloat, priority: UILayoutPriority)
     case greaterThanOrEqual(to: CGFloat, priority: UILayoutPriority)
     
+    /// Convenience. Sama as `.equal(to: to, priority: .required)`.
+    /// - Parameter to: value
+    public static func equal(to: CGFloat) -> LayoutConnectionSimpleRelation {
+        return .equal(to: to, priority: .required)
+    }
+    
+    /// Convenience. Sama as `.lessThanOrEqual(to: to, priority: .required)`.
+    /// - Parameter to: value
+    public static func lessThanOrEqual(to: CGFloat) -> LayoutConnectionSimpleRelation {
+        return .lessThanOrEqual(to: to, priority: .required)
+    }
+    
+    /// Convenience. Sama as `.greaterThanOrEqual(to: to, priority: .required)`.
+    /// - Parameter to: value
+    public static func greaterThanOrEqual(to: CGFloat) -> LayoutConnectionSimpleRelation {
+        return .greaterThanOrEqual(to: to, priority: .required)
+    }
+    
 }
 
 /// Connection relation using a multiplier.
