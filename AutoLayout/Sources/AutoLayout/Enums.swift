@@ -43,19 +43,19 @@ public enum LayoutConnectionMultipliedRelation {
     case lessThanOrEqual(to: NSLayoutDimension, multiplier: CGFloat, constant: CGFloat, priority: UILayoutPriority)
     case greaterThanOrEqual(to: NSLayoutDimension, multiplier: CGFloat, constant: CGFloat, priority: UILayoutPriority)
     
-    /// Convenience.
+    /// Convenience. Same as `.equal(to: to, multiplier: 1, constant: 0, priority: .required)`.
     /// - Parameter to: dimension
     public static func equal(to: NSLayoutDimension) -> LayoutConnectionMultipliedRelation {
         return .equal(to: to, multiplier: 1, constant: 0, priority: .required)
     }
     
-    /// Convenience.
+    /// Convenience. Same as `.lessThanOrEqual(to: to, multiplier: 1, constant: 0, priority: .required)`.
     /// - Parameter to: dimension.
     public static func lessThanOrEqual(to: NSLayoutDimension) -> LayoutConnectionMultipliedRelation {
         return .lessThanOrEqual(to: to, multiplier: 1, constant: 0, priority: .required)
     }
     
-    /// Convenience.
+    /// Convenience. Same as `.greaterThanOrEqual(to: to, multiplier: 1, constant: 0, priority: .required)`.
     /// - Parameter to: dimension
     public static func greaterThanOrEqual(to: NSLayoutDimension) -> LayoutConnectionMultipliedRelation {
         return .greaterThanOrEqual(to: to, multiplier: 1, constant: 0, priority: .required)
@@ -85,7 +85,7 @@ extension LayoutConnectionSimpleRelation: ExpressibleByIntegerLiteral {
 
 internal extension CGFloat {
     
-    /// Return a simple relation equal to this value.
+    /// Returns a simple relation equal to this value.
     var simpleRelation: LayoutConnectionSimpleRelation {
         return .equal(to: self, priority: .required)
     }
