@@ -554,6 +554,33 @@ public extension AutoLayout where Source: AnchorProviding {
         return centerVertically(0, to: item)
     }
     
+    /// Constrains centerY anchor to given Y axis anchor using an offest.
+    ///
+    /// Example:
+    /// ```
+    /// view.autoLayout(in: self).centerVertically(-10, to: otherView.topAnchor)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - value: offset
+    ///   - anchor: anchor
+    func centerVertically(_ value: CGFloat, to anchor: NSLayoutYAxisAnchor) -> Self {
+        return centerVertically(relation: value.simpleRelation, to: anchor)
+    }
+    
+    /// Constrains centerY anchor to given Y axis anchor.
+    ///
+    /// Example:
+    /// ```
+    /// view.autoLayout(in: self).centerVertically(to: otherView.topAnchor)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - anchor: anchor
+    func centerVertically(to anchor: NSLayoutYAxisAnchor) -> Self {
+        return centerVertically(0, to: anchor)
+    }
+    
     /// Constrans centerY anchor to given item's centerY anchor using given relation.
     ///
     /// Example:
@@ -594,6 +621,33 @@ public extension AutoLayout where Source: AnchorProviding {
     /// - Parameter item: item
     func centerHorizontally(to item: AnchorProviding) -> Self {
         return centerHorizontally(0, to: item)
+    }
+    
+    /// Constrains centerX anchor to given X axis anchor using an offest.
+    ///
+    /// Example:
+    /// ```
+    /// view.autoLayout(in: self).centerHorizontally(-10, to: otherView.trailingAnchor)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - value: offset
+    ///   - anchor: anchor
+    func centerHorizontally(_ value: CGFloat, to anchor: NSLayoutXAxisAnchor) -> Self {
+        return centerHorizontally(relation: value.simpleRelation, to: anchor)
+    }
+    
+    /// Constrains centerX anchor to given X axis anchor.
+    ///
+    /// Example:
+    /// ```
+    /// view.autoLayout(in: self).centerHorizontally(to: otherView.trailingAnchor)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - anchor: anchor
+    func centerHorizontally(to anchor: NSLayoutXAxisAnchor) -> Self {
+        return centerHorizontally(0, to: anchor)
     }
     
     /// Constrans centerX anchor to given item's centerX anchor using given relation.
