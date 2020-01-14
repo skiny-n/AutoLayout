@@ -93,7 +93,7 @@ myView.autoLayout.width(to: otherView, multiplier: 1, constant: -10, priority: .
 Instances of this class serve only to create and keep references to created constraints so it's totally OK to discard them after calling `activate()`, which activates all created constraints:
 ```swift
 myView.autoLayout(in: otherView).centerHorizontally().centerVertically()
-                                .width(300).height(relation: <= 450).activate()
+                                .width(300).height(relation: <=450).activate()
 ```
 
 ### Changing layout
@@ -115,6 +115,9 @@ someViewLayout.heightConnections.first?.constant = 500
 let someView = UIView()
 let heightConnection = someView.autoLayout(in: self.view).top().left().right().height(150)
                                                          .activate().findAll(.height).first
+// or
+let heightConnection = someView.autoLayout(in: otherView).top().left().right().height(150)
+            .activate().firstHeightConnection                                                         
 
 // and then
 heightConnection?.constant = 500
@@ -148,18 +151,18 @@ enums `LayoutConnectionSimpleRelation` and `LayoutConnectionMultipliedRelation` 
 // Simple relation
 myView.autoLayout.below(relation: >=20, to: otherView)
 
-// or 
-myView.autoLayout.below(relation: .greaterThanOrEqual(to: 20, priority: .required), to: otherVIew)
+// or
+myView.autoLayout.below(relation: .greaterThanOrEqual(to: 20, priority: .required), to: otherView)
 
 // and many more
-myView.autoLayout.height(relation: .equal(to: otherView.height, multiplier: 1, constant: -100, priority: .defaultHigh))
+myView.autoLayout.height(relation: .equal(to: otherView.heightAnchor, multiplier: 1, constant: -100, priority: .defaultHigh))
 
-// or just 
+// or just
 myView.autoLayout.height(to: otherView)
 myView.autoLayout.height(to: otherView.heightAnchor)
 
 myView.autoLayout.leading(to: otherView)
-myView.autoLayout.leading(to: otherView.leadingAnchor)
+myView.autoLayout.after(otherView) // myView.leading == otherView.trailing
 
 ```
 
@@ -219,15 +222,20 @@ myView.autoLayout.after(firstView).before(secondView)
 // Equal heights and widths
 AutoLayout<UIView>.equalHeights([firstView, secondView]).activate()
 AutoLayout<UIView>.equalWidths([firstView, secondView]).activate()
+// OR
+UIViewLayout.equalHeights([firstView, secondView]).activate()
+UIViewLayout.equalWidths([firstView, secondView]).activate()
 
 ```
 
 ### And of course, distribution ❤️
 ```swift
 // Distribute views equaly in horizontal/vertical direciton (with optional spacing and margin)
-container.autoLayout.distributeHorizontally([firstView, secondView, thirdView], 
-                                            spacing: 8, 
-                                            margin: .init(top: 20, left: 16, bottom: 20, right: 16))
+container.autoLayout.distributeHorizontally(
+    [firstView, secondView, thirdView],
+    spacing: 8,
+    margin: .init(top: 20, left: 16, bottom: 20, right: 16)
+)
 ```
 
 
