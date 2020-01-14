@@ -1,4 +1,4 @@
-![alt text](./Resources/Logo.png "AutoLayout")
+![Logo](./Resources/Logo.png "AutoLayout")
 
 # About
 
