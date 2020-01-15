@@ -268,6 +268,12 @@ public extension AutoLayout where Source: UIView {
         return fillParent(relation: margin.simpleRelation)
     }
     
+    /// Constrains top, leading, trailing and bottom to superview with given margins.
+    /// - Parameter margins: margins
+    func fillParent(_ margins: UIEdgeInsets) -> Self {
+        return top(margins.top).leading(margins.left).trailing(margins.right).bottom(margins.bottom)
+    }
+    
     ///  Constrains top, leading, trailing and bottom to superview with given relation.
     /// - Parameter relation: relation
     func fillParent(relation: LayoutConnectionSimpleRelation) -> Self {
