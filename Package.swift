@@ -16,7 +16,8 @@ let package = Package(
     targets: [
         .target(
             name: "AutoLayout",
-            path: "./AutoLayout/"
+            path: "./AutoLayout/",
+            exclude: ["./AutoLayout/Examples"]
         )
     ],
     swiftLanguageVersions: [.v4, .v4_2, .v5]
